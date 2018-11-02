@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Contact</title>
+</head>
+<body>
+<div id="mainmenu" class="fluid-container">
+			<!-- <div class="col col-sm-2"></div> -->
+			<nav class="navbar navbar-default" id="mainHeader">
+				<div class="container-fluid">
+					<div class="logo">
+						InTouchApp<i class="fa fa-phone-square" aria-hidden="true" style="padding: 5px;"></i>
+					</div>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<div class="row">
+				
+				<div class="col col-sm-3">
+					<h3>Contact List</h3>
+					<div class="contactlist">
+					<input class="form-group col-xs-10 col-sm-10 col-md-10 form_group" placeholder="Search.." name="search2">
+ 					 <button type="submit"><i class="fa fa-search"></i></button>
+					<!-- <%
+						DbConnection db = new DbConnection();
+							String query = "select * from contact_details";
+							System.out.println("contact details"+query);
+						
+					%> --></div>
+					<div class="item_section">
+						
+					</div>
+	
+				</div>
+				<div class="col col-sm-8 contactDetails"> <h3>Contact Details</h3>
+					
+						<div align="center" class="item_section1"><img alt="avatar" style="width: 120px; height: 120px;" src="https://cdn.onlinewebfonts.com/svg/img_258083.png"></div>
+						<section class="form_main">
+						<div class="container">
+								<div id="orgDetails" class="tabcontent">
+									<div class="col-md-12 item_section">
+										<h4 class="head_sub">Personal Details</h4>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtFirstName">First Name</label>
+											<input data-ng-model="contactCtrl.FirstName" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="70" maxlength="75"
+												tabindex="1" onkeyup="CheckAlphabetonly(event)"
+												placeholder="First Name"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtLastName">Last Name</label>
+											<input data-ng-model="contactCtrl.LastName" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="70" maxlength="75"
+												tabindex="1" onkeyup="CheckAlphabetonly(event)"
+												placeholder="Last Name"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtRelatedName">Related Name</label>
+											<input data-ng-model="contactCtrl.RelatedName" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="70" maxlength="75"
+												tabindex="1" onkeyup="CheckAlphabetonly(event)"
+												placeholder="Related Name"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtDisplayName">Dispaly Name</label>
+											<input data-ng-model="contactCtrl.DisplayName" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="70" maxlength="75"
+												tabindex="1" onkeyup="CheckAlphabetonly(event)"
+												placeholder="Display Name"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtNickName">Nick Name</label>
+											<input data-ng-model="contact.NickName" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="70" maxlength="75"
+												tabindex="1" onkeyup="CheckAlphabetonly(event)"
+												placeholder="Nick Name"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBirthday">Birthday</label>
+											<input data-ng-model="contactCtrl.birthday" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="3" tabindex="2"
+												placeholder="Birthday"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtGender">Gender</label>
+											<input data-ng-model="contactCtrl.gender" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="3" tabindex="2"
+												placeholder="Gender">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtHomeAdd1">Home Address 1</label>
+											<input data-ng-model="contactCtrl.homeAdd1" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="3" onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Home Address 1">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtHomeAdd2">Home Address 2</label>
+											<input data-ng-model="contactCtrl.homeAdd2" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="3" onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Home Address 2">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtStreet">Home Street</label>
+											<input data-ng-model="contactCtrl.Street" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="5"
+												placeholder="Home Street"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtCity">Home City</label>
+											<input data-ng-model="contactCtrl.City" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="8"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Home City"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtState">Home State</label>
+											<input data-ng-model="contactCtrl.State" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="22" tabindex="9"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Home State"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtCountry">Home Country</label>
+											<input data-ng-model="contactCtrl.Country" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="22" tabindex="9"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Home Country"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtPostalcode">Home Postal Code</label>
+											<input data-ng-model="contactCtrl.Postalcode" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="6" value="0" tabindex="10" data-ng-blur="fnPincodeChk()"
+												onkeyup="NumberValidation(event)"
+												placeholder="Postal Code"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtMobilePhone">Mobile Phone</label>
+											<input data-ng-model="contactCtrl.MobilePhone" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="11" tabindex="11" value="0"
+												data-ng-blur="fnmobilenumber()"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Mobile Phone">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtHomePhone">Home Phone</label>
+											<input data-ng-model="contactCtrl.HomePhone" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="11" tabindex="12" value="0"
+												data-ng-blur="fnphone2number()"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Home Phone">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtHomeFax">Home Fax</label>
+											<input data-ng-model="contactCtrl.fax" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" value="0" maxlength="10"
+												tabindex="14" value="0"
+												onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Home Fax">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtgst">Anniversary</label>
+											<input data-ng-model="contactCtrl.anniversary" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="25" maxlength="15"
+												onkeyup="NotValidAllowedSpecialChar(event)" value="0"
+												placeholder="Anniversary">
+										</div>
+										<div class="clearfix"></div>
+										<br>
+									</div>
+								</div>
+								<div id="businessDetails" class="tabcontent">
+									<div class="col-md-12 item_section">
+										<h4 class="head_sub">Business Details</h4>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtOrganization">Organization</label>
+											<input data-ng-model="contactCtrl.BussOrganization" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="5"
+												placeholder="Organization">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtJobTitle">Job Title</label>
+											<input data-ng-model="contactCtrl.BussJobTitle" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="5"
+												placeholder="Job Title">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBusinessAdd1">Business Address 1</label>
+											<input data-ng-model="contactCtrl.businessAdd1" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="3" onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Business Address 1">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtHomeAdd2">Business Address 2</label>
+											<input data-ng-model="contactCtrl.businessAdd2" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="3" onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Business Address 2"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBussStreet">Business Street</label>
+											<input data-ng-model="contactCtrl.BussStreet" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" maxlength="50"
+												tabindex="5"
+												placeholder="Business Street">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBussCity">Business City</label>
+											<input data-ng-model="contactCtrl.BussCity" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="8"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Business City">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtState">Business State</label>
+											<input data-ng-model="contactCtrl.BussState" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="22" tabindex="9"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Business State">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBussCountry">Business Country</label>
+											<input data-ng-model="contactCtrl.BussCountry" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="22" tabindex="9"
+												onkeyup="CheckAlphabetonly(event)"
+												placeholder="Business Country"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtPostalcode">Business Postal Code</label>
+											<input data-ng-model="contactCtrl.BussPostalcode" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="6" value="0" tabindex="10" data-ng-blur="fnPincodeChk()"
+												onkeyup="NumberValidation(event)"
+												placeholder="Business Postal Code"
+												required="required">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBussPhone">Business Phone</label>
+											<input data-ng-model="contactCtrl.BussPhone" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="11" tabindex="11" value="0"
+												data-ng-blur="fnmobilenumber()"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Business Phone">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtBusinessFax">Business Fax</label>
+											<input data-ng-model="contactCtrl.Bussfax" type="text"
+												class="form-control form_category"
+												style="visibility: visible" size="30" value="0" maxlength="10"
+												tabindex="14" value="0"
+												onkeyup="NotValidAllowedSpecialChar(event)"
+												placeholder="Business Fax">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtEmail1">Email Address</label>
+											<input data-ng-model="contactCtrl.email1" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Email address">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtEmail2">Email Address 2</label>
+											<input data-ng-model="contactCtrl.email2" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Email address 2">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtEmail3">Email Address 3</label>
+											<input data-ng-model="contactCtrl.email3" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												onkeyup="MobileNumberValidation(event)"
+												placeholder="Email address 3">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtWebpage">Web Page</label>
+											<input data-ng-model="contactCtrl.webpage" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												placeholder="Web Page">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtWebpage2">Web Page 2</label>
+											<input data-ng-model="contactCtrl.webpage2" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												placeholder="Web Page 2">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtPager">Pager</label>
+											<input data-ng-model="contactCtrl.pager" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												placeholder="Pager">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtCategories">Categories</label>
+											<input data-ng-model="contactCtrl.categories" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												placeholder="Categories">
+										</div>
+										<div class="form-group col-xs-12 col-sm-6 col-md-4 form_group">
+											<label data-ng-model="txtNotes">Notes</label>
+											<input data-ng-model="contactCtrl.notes" type="text"
+												class="form-control form_category" style="visibility: visible"
+												size="30" maxlength="50" tabindex="11" value="0"
+												placeholder="Notes">
+										</div>
+										<div class="clearfix"></div>
+										<br>
+										
+										
+								
+										<br>
+									</div>
+								</div>
+				
+							
+						</div>
+					</section>
+				</div>
+				</div>
+				</div></div>
+
+</body>
+</html>
